@@ -28,7 +28,7 @@
     <!-- Server -->
     <dependency>
       <groupId>org.jooby</groupId>
-      <artifactId>jooby-jetty</artifactId>
+      <artifactId>jooby-netty</artifactId>
     </dependency>
 
     <!-- logging -->
