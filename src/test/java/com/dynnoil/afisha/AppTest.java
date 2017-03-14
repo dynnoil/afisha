@@ -1,4 +1,4 @@
-package com.dynnoil;
+package com.dynnoil.afisha;
 
 import static io.restassured.RestAssured.get;
 import static org.hamcrest.Matchers.equalTo;

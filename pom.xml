@@ -21,7 +21,7 @@
     <jooby.version>1.0.3</jooby.version>
 
     <!-- Startup class -->
-    <application.class>com.dynnoil.App</application.class>
+    <application.class>com.dynnoil.afisha.App</application.class>
   </properties>
 
   <dependencies>
@@ -35,6 +35,19 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
+    </dependency>
+
+    <!-- VK api -->
+    <dependency>
+      <groupId>com.vk.api</groupId>
+      <artifactId>sdk</artifactId>
+      <version>0.4.3</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <!-- Tests -->
