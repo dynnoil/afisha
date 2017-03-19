@@ -31,6 +31,17 @@
       <artifactId>jooby-netty</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>org.jooby</groupId>
+      <artifactId>jooby-pac4j</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.pac4j</groupId>
+      <artifactId>pac4j-oauth</artifactId>
+      <version>1.9.5</version>
+    </dependency>
+
     <!-- logging -->
     <dependency>
       <groupId>ch.qos.logback</groupId>
