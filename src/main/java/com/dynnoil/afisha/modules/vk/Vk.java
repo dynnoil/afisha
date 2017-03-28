@@ -3,6 +3,7 @@ package com.dynnoil.afisha.modules.vk;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.inject.Binder;
 import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
 import com.vk.api.sdk.client.TransportClient;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
@@ -12,26 +13,22 @@ import com.vk.api.sdk.objects.groups.Group;
 import com.vk.api.sdk.objects.groups.GroupType;
 import com.vk.api.sdk.objects.groups.responses.SearchResponse;
 import org.jooby.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 /**
- * VK module
+ * Vk module
  * <p>
  * Created by SBT-Krukov-LYu on 14.03.2017.
  */
-public class VK implements Jooby.Module {
-    private static final Logger LOGGER = LoggerFactory.getLogger(VK.class);
+public class Vk implements Jooby.Module {
     private UserActor actor;
     private VkApiClient vkApiClient;
 
     @Override
     public void configure(Env env, Config config, Binder binder) throws Throwable {
 
-        env.onStart(() -> {
-            LOGGER.info("Initializing VK API");
+        /*env.onStart(() -> {
             TransportClient transportClient = HttpTransportClient.getInstance();
             vkApiClient = new VkApiClient(transportClient);
         });
@@ -52,11 +49,16 @@ public class VK implements Jooby.Module {
             List<Group> groups = searchResponse.getItems();
             String json = new ObjectMapper().writeValueAsString(groups);
             rs.send(Results.json(json));
-        });
+        });*/
 
     }
 
-    private void initializeUserActor(Config config, String code) throws Throwable {
+    @Override
+    public Config config() {
+        return ConfigFactory.parseResources(Vk.class, "vk.conf");
+    }
+
+    /*private void initializeUserActor(Config config, String code) throws Throwable {
         final Integer appId = Integer.valueOf(config.getString("vk.app_id"));
         final String clientSecret = config.getString("vk.client_secret");
         final String redirectUri = config.getString("vk.redirect_uri");
@@ -64,5 +66,5 @@ public class VK implements Jooby.Module {
                 .userAuthorizationCodeFlow(appId, clientSecret, redirectUri, code)
                 .execute();
         actor = new UserActor(authResponse.getUserId(), authResponse.getAccessToken());
-    }
+    }*/
 }
