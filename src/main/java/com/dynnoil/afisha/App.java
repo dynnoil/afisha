@@ -18,7 +18,7 @@ import java.sql.Statement;
 public class App extends Jooby {
 
     {
-        use(new Jdbc());
+//        use(new Jdbc());
 
         use(new Hbs());
 
@@ -32,9 +32,11 @@ public class App extends Jooby {
             return new VkClient(key, secret);
         }));*/
 
-        get("/", request -> Results.html("index").put("greeting", "Hello, World!"));
+        get("/", request -> Results.html("index"));
+        get("/about", request -> Results.html("about"));
+        get("/architecture", request -> Results.html("architecture"));
 
-        // start transaction
+/*           // start transaction
         before("/api/*", (req, rsp) -> {
             DataSource ds = require(DataSource.class);
             Connection connection = ds.getConnection();
@@ -42,8 +44,8 @@ public class App extends Jooby {
             req.set("connection", connection);
         });
 
-        // commit/rollback transaction
-        complete("/api/*", (req, rsp, cause) -> {
+     // commit/rollback transaction
+        complete("/api*//*", (req, rsp, cause) -> {
             // unbind connection from request
             try (Connection connection = (Connection) req.unset("connection").get()) {
                 if (cause.isPresent()) {
@@ -68,7 +70,7 @@ public class App extends Jooby {
             }
 
             return Results.html("index").put("greeting", "Database usage!").put("data", resultSet);
-        });
+        });*/
     }
 
     public static void main(final String[] args) {

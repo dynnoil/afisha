@@ -1,13 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    {{& main_styles}}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{title}}</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> {{& main_styles}}
 </head>
+
 <body>
-    <h1>{{greeting}}</h1>
-    <p>{{data}}</p>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                <a class="navbar-brand" href="/">Afisha App</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/about">О проекте</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Детали<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/architecture">Архитектура</a></li>
+                            <li><a href="#">Разработка</a></li>
+                            <li><a href="#">Тестирование</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Ссылки</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Афиша Города</h1>
+            <p>Приложение, которое поможет тебе узнать о событиях в твоём городе</p>
+            <br>
+            <p><a class="btn btn-primary btn-lg" href="/about" role="button">Узнать больше »</a></p>
+        </div>
+    </div>
+    <section class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="glyphicon glyphicon-user glyphicon-large" aria-hidden="true"></span>
+                    <h3>Никакой регистрации</h3>
+                    <p>Это - информационно-справочное приложение. Никакая регистрация не нужна.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="glyphicon glyphicon-th-large glyphicon-large" aria-hidden="true"></span>
+                    <h3>Простота и удобство</h3>
+                    <p>Интерфейс приложения - простой и удобный. Ничего лишнего.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="glyphicon glyphicon-thumbs-up glyphicon-large" aria-hidden="true"></span>
+                    <h3>Возможности</h3>
+                    <p>Ты можешь добавить событие в календаль, сохранить в избранном или поделиться им с друзьями. И это ещё не всё.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--<h1>{{greeting}}</h1>-->
+    <!--<p>{{data}}</p>-->
     {{& main_scripts}}
 </body>
+
 </html>

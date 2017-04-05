@@ -34,7 +34,7 @@
     <!-- JDBC -->
     <dependency>
       <groupId>org.jooby</groupId>
-      <artifactId>jooby-jdbc</artifactId>
+      <artifactId>jooby-jdbi</artifactId>
     </dependency>
 
     <dependency>
