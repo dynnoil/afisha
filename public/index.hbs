@@ -1,42 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{{> head title="Афиша города"}}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> {{& main_styles}}
+    <title>{{page.title}}</title>
+</head>
 
 <body>
     {{> navbar}}
     <div class="jumbotron">
         <div class="container">
-            <h1>Афиша Города</h1>
-            <p>Приложение, которое поможет тебе узнать о событиях в твоём городе</p>
+            <h1>{{page.title}}</h1>
+            {{#if main}}
+            <p>{{page.description}}</p>
             <br>
             <p><a class="btn btn-primary btn-lg" href="/about" role="button">Узнать больше »</a></p>
+            {{else}}
+            <blockquote>
+                <p>{{page.description}}</p>
+            </blockquote>
+            <br> 
+            {{/if}}
         </div>
     </div>
-    <section class="call-to-action">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="glyphicon glyphicon-user glyphicon-large" aria-hidden="true"></span>
-                    <h3>Никакой регистрации</h3>
-                    <p>Это - информационно-справочное приложение. Никакая регистрация не нужна.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="glyphicon glyphicon-th-large glyphicon-large" aria-hidden="true"></span>
-                    <h3>Простота и удобство</h3>
-                    <p>Интерфейс приложения - простой и удобный. Ничего лишнего.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="glyphicon glyphicon-thumbs-up glyphicon-large" aria-hidden="true"></span>
-                    <h3>Возможности</h3>
-                    <p>Ты можешь добавить событие в календаль, сохранить в избранном или поделиться им с друзьями. И это ещё
-                        не всё.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--<h1>{{greeting}}</h1>-->
-    <!--<p>{{data}}</p>-->
+    <div class="container">
+        {{{page.content}}}
+    </div>
     {{& main_scripts}}
 </body>
 
