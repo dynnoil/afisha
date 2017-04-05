@@ -11,12 +11,15 @@ import org.jooby.hbs.Hbs;
 public class App extends Jooby {
 
     {
-        use(new Hbs());
+        use(new Hbs("/", ".hbs"));
         use(new Assets());
 
         get("/", request -> Results.html("index"));
         get("/about", request -> Results.html("about"));
         get("/architecture", request -> Results.html("architecture"));
+        get("/development", request -> Results.html("development"));
+        get("/testing", request -> Results.html("testing"));
+        get("/references", request -> Results.html("references"));
 
     }
 
