@@ -77,3 +77,16 @@ dl dd {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+.list-group-item {
+  background-color: #3E4649;
+  border-color: #919FA4;
+}
+.list-group-item h4 {
+  color: #f7f7f7
+  !important;
+}
+ol li {
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+}
