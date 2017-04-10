@@ -1,8 +1,8 @@
 package com.dynnoil.afisha.model.pojo;
 
-import java.sql.Clob;
-
 /**
+ * Page Entity
+ * <p>
  * Created by DynNoil on 05.04.2017.
  */
 public class Page {

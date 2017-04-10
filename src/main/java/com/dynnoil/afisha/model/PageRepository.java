@@ -8,12 +8,14 @@ import org.skife.jdbi.v2.sqlobject.helpers.MapResultAsBean;
 import java.io.Closeable;
 
 /**
+ * Page Repository
+ * <p>
  * Created by DynNoil on 05.04.2017.
  */
 public interface PageRepository extends Closeable {
 
     /**
-     * Method finds a page in the database using unique page's name
+     * Method finds a page in the database by page's name
      *
      * @return Page
      */
